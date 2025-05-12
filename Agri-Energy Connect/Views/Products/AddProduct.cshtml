@@ -1,0 +1,50 @@
+@model Agri_Energy_Connect.Models.Product
+@{
+    ViewData["Title"] = "Add a Product";
+}
+
+<h1>Add a Product</h1>
+<hr/>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddProduct" method="post" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name">Product Name</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description">Product Description</label>
+                <textarea asp-for="Description" class="form-control"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductionDate">Production Date</label>
+                <input asp-for="ProductionDate" type="date" class="form-control" />
+                <span asp-validation-for="ProductionDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Type">Product Type</label>
+                <select asp-for="Type" class="form-control">
+                    <option value="">Select Product Type</option>
+                    <option value="Fertilizer">Fertilizer</option>
+                    <option value="Pesticide">Pesticide</option>
+                    <option value="Seed">Seed</option>
+                    <option value="Equipment">Equipment</option>
+                </select>
+                <span asp-validation-for="Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+               <label for="image">Select a file</label>
+                <input type="file" name="image" class="form-control" />
+                <span asp-validation-for="ImageUrl"></span>
+            </div>
+            <button type="submit" value="Add" class="btn btn-primary">Add Product</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

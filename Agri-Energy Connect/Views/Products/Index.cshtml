@@ -1,0 +1,38 @@
+@model IEnumerable<Agri_Energy_Connect.Models.Product>
+@{
+    ViewData["Title"] = "View Products";
+}
+
+<h1Products</h1>
+
+<p>
+    <a asp-action="AddProduct"> Add Product </a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Product Description</th>
+            <th>Production Date</th>
+            <th>Product Type</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Description</td>
+                <td>@product.ProductionDate.ToString("yyyy-MM-dd")</td>
+                <td>@product.Type</td>
+                <td><img src="@Url.Content("~/images/" + product.ImageUrl)" alt="Product Image" style="width:100px;height:100px;" /></td>
+                <td><a asp-action="DeleteProduct" asp-route-id="@product.Id">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
