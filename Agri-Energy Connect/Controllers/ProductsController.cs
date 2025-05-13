@@ -36,54 +36,17 @@ namespace Agri_Energy_Connect.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddProduct(Product product, IFormFile image)
+        public async Task<IActionResult> AddProduct(Product product)
         {
-            if (image == null || image.Length == 0)
-            {
-                ModelState.AddModelError("", "File not selected");
-                return RedirectToAction("Index", "Home");
-            }
-
-            var permittedExtensions = new[] { ".jpg", ".png", ".gif" };
-            var extension = Path.GetExtension(image.FileName).ToLowerInvariant();
-
-            if (string.IsNullOrEmpty(extension) || !permittedExtensions.Contains(extension))
-            {
-                ModelState.AddModelError("", "Invalid image type.");
-                return RedirectToAction("Index", "Home");
-            }
-
-            var mimeType = image.ContentType;
-            var permittedMimeTypes = new[] { "image/jpeg", "image/png", "image/gif" };
-            if (!permittedMimeTypes.Contains(mimeType))
-            {
-                ModelState.AddModelError("", "Invalid MIME type.");
-                return RedirectToAction("Index", "Home");
-            }
-
+            int farmerId = HttpContext.Session.GetInt32("UserId").Value;
             if (ModelState.IsValid)
             {
-                var uploadFolderPath = Path.Combine(_webHostEnvironment.WebRootPath, "productImages");
-                if (!Directory.Exists(uploadFolderPath))
-                {
-                    Directory.CreateDirectory(uploadFolderPath);
-                }
-
-                var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(image.FileName);
-                var filePath = Path.Combine(uploadFolderPath, uniqueFileName);
-
-                using (var stream = new FileStream(filePath, FileMode.Create, FileAccess.Write))
-                {
-                    await image.CopyToAsync(stream);
-                }
-
                 var products = new Product
                 {
+                    farmerId = farmerId,
                     Name = product.Name,
                     Description = product.Description,
                     ProductionDate = product.ProductionDate,
-                    ImageUrl = "/productImages/" + uniqueFileName,
-                    Image = ConvertToByteArray(filePath), // Set the image byte array as needed
                     Type = product.Type,
                 };
                 _context.Products.Add(products);
@@ -92,111 +55,54 @@ namespace Agri_Energy_Connect.Controllers
             return RedirectToAction("Index", "Products");
         }
 
-        private byte[] ConvertToByteArray(string filePath)
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
         {
-            byte[] fileData;
-            using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read))
-            {
-                using (BinaryReader reader = new BinaryReader(fs))
-                {
-                    fileData = reader.ReadBytes((int)fs.Length);
-                }
-            }
-            return fileData;
-        }
-
-        private string GetMimeType(byte[] imageData)
-        {
-            if (imageData.Length >= 2 && imageData[0] == 0xFF && imageData[1] == 0xD8)
-            {
-                return "image/jpeg";
-            }
-            else if (imageData.Length >= 4 && imageData[0] == 0x89 && imageData[1] == 0x50 && imageData[2] == 0x4E && imageData[3] == 0x47)
-            {
-                return "image/png";
-            }
-            return "application/octet-stream";
-        }
-
-        public IActionResult DisplayImage(int id)
-        {
-            var image = _context.Products.Find(id);
-
-            if (image == null || image.Image == null)
+            if (id == null)
             {
                 return NotFound();
             }
-            return File(image.Image, GetMimeType(image.Image));
-        }
 
-        [HttpGet]
-        public async Task<IActionResult> EditProduct(int id)
-        {
-            if (id == null)
-        {
-            return NotFound();
-        }
-
-        var products = await _context.Products.FindAsync(id);
-        if (products == null)
-        {
-            return NotFound();
-        }
-        return View(products);
-    }
-
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int id, [Bind("ProductID,ProductName,Description,ProductionDate,ImageUrl,Image,Type")] Product product, IFormFile image)
-    {
-        if (id != product.Id)
-        {
-            return NotFound();
-        }
-
-        if (ModelState.IsValid)
-        {
-            try
+            var products = await _context.Products.FindAsync(id);
+            if (products == null)
             {
-                if (image != null && image.Length > 0)
-                {
-                    var permittedExtensions = new[] { ".jpg", ".png", ".gif" };
-                    var extension = Path.GetExtension(image.FileName).ToLowerInvariant();
-
-                    if (string.IsNullOrEmpty(extension) || !permittedExtensions.Contains(extension))
-                    {
-                        ModelState.AddModelError("image", "Invalid image type.");
-                        return View(product);
-                    }
-
-                    var uploadFolderPath = Path.Combine(_webHostEnvironment.WebRootPath, "productImages");
-                    var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(image.FileName);
-                    var filePath = Path.Combine(uploadFolderPath, uniqueFileName);
-
-                    using (var stream = new FileStream(filePath, FileMode.Create, FileAccess.Write))
-                    {
-                        await image.CopyToAsync(stream);
-                    }
-                    product.ImageUrl = uniqueFileName;
-                    product.Image = ConvertToByteArray(filePath);
-                }
-                _context.Update(product);
-                await _context.SaveChangesAsync();
+                return NotFound();
             }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ProductExists(product.Id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-            return RedirectToAction(nameof(Index));
+            return View(products);
         }
-        return View(product);
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,ProductionDate,Type")] Product product)
+        {
+            if (id != product.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                var farmerId = HttpContext.Session.GetInt32("UserId").Value;
+                product.farmerId = farmerId;
+                try
+                {
+                    _context.Update(product);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!ProductExists(product.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return RedirectToAction("Index", "Products");
         }
 
         private bool ProductExists(int id)
@@ -235,5 +141,29 @@ namespace Agri_Energy_Connect.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
+        [HttpGet]
+        public async Task<IActionResult> ViewAllProducts(DateOnly? filterDate, string filterType)
+        {
+
+            var products = _context.Products.AsQueryable();
+
+            if (filterDate.HasValue)
+            {
+                products = products.Where(p => p.ProductionDate == filterDate.Value);
+            }
+
+            if (!string.IsNullOrEmpty(filterType))
+            {
+                products = products.Where(p => p.Type == filterType);
+            }
+
+            products = products.OrderByDescending(p => p.ProductionDate);
+
+            var filteredProducts = await products.ToListAsync();
+            return View(filteredProducts);
+        }
+
+
     }
 }

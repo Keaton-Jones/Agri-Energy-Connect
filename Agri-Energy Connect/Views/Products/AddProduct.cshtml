@@ -28,17 +28,11 @@
                 <label asp-for="Type">Product Type</label>
                 <select asp-for="Type" class="form-control">
                     <option value="">Select Product Type</option>
-                    <option value="Fertilizer">Fertilizer</option>
-                    <option value="Pesticide">Pesticide</option>
-                    <option value="Seed">Seed</option>
-                    <option value="Equipment">Equipment</option>
+                    <option value="Solar-powered irrigation systems">Solar-powered irrigation systems</option>
+                    <option value="Wind turbines">Wind turbines</option>
+                    <option value="Biogas">Biogas</option>
                 </select>
                 <span asp-validation-for="Type" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-               <label for="image">Select a file</label>
-                <input type="file" name="image" class="form-control" />
-                <span asp-validation-for="ImageUrl"></span>
             </div>
             <button type="submit" value="Add" class="btn btn-primary">Add Product</button>
         </form>

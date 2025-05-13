@@ -12,13 +12,24 @@ html {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
 body {
-  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Use vh for viewport height */
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
@@ -30,13 +41,25 @@ body {
   text-align: start;
 }
 /*Google, Gemini, 06/05/2025, */
-.navbar .container{
+.navbar .container-fluid { /* Note the container-fluid here, as that's what you're using */
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.login-register {
-  display: flex;
+.navbar-collapse { /* Target the collapse div directly */
+  display: flex; /* Ensure its children (the two ul's) are laid out with flex */
+  justify-content: space-between; /* Put space between the main links and the auth links */
   align-items: center;
+  flex-grow: 1; /* Allow it to take up available space */
+}
+
+.navbar-nav {
+  display: flex; /* Make the ul a flex container for its list items */
+  align-items: center; /* Vertically align items in the ul */
+}
+
+/* If you want space between Login/Register if both are visible */
+.navbar-nav:last-child .nav-item:not(:last-child) {
+  margin-right: 1em;
 }

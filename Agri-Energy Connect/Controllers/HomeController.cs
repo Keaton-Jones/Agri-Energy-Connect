@@ -28,4 +28,11 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+
+    [HttpPost]
+    public async Task<IActionResult> Logout()
+    {
+        HttpContext.Session.Clear(); //  Clear the session on logout
+        return RedirectToAction("Index", "Home"); // Redirect to the login page
+    }
 }

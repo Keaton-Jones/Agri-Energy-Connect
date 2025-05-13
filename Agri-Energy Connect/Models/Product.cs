@@ -9,8 +9,8 @@ namespace Agri_Energy_Connect.Models
         [Key]
         public int Id { get; set; }
 
-        [ForeignKey("FarmerId")]
-        public int FarmerId { get; set; }
+        [ForeignKey("farmerId")]
+        public int farmerId { get; set; }
         
         [Required]
         [DisplayName("Product Name")]
@@ -22,13 +22,6 @@ namespace Agri_Energy_Connect.Models
         [DisplayName("Production Date")]
         [DataType(DataType.Date)]
         public DateOnly ProductionDate { get; set; }
-        [Required]
-        public string? ImageUrl { get; set; }
-
-        [Required]
-        public byte []? Image { get; set; }
-        [Required]
-        [DisplayName("Product Type")]
         public string Type { get; set; }
     }
 }

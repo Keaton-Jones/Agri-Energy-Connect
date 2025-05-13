@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "17QMOixcRSYwzoPNmpTI4lWO980T94YgtaJL3t07ztc=",
+  "Hash": "bvJhFmszxXye3cFLCNG2K4oWNgj9IbSTQX3sQkGDW40=",
   "Source": "Agri-Energy Connect",
   "BasePath": "_content/Agri-Energy Connect",
   "Mode": "Default",
@@ -1340,12 +1340,12 @@
       "OriginalItemSpec": "C:\\Varsity College\\2025\\PROG7311\\Code\\Agri-Energy-Connect\\Agri-Energy Connect\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "C:\\Varsity College\\2025\\PROG7311\\Code\\Agri-Energy-Connect\\Agri-Energy Connect\\obj\\Debug\\net9.0\\compressed\\ztmnvz42cg-kqxmc8c7rn.gz",
+      "Identity": "C:\\Varsity College\\2025\\PROG7311\\Code\\Agri-Energy-Connect\\Agri-Energy Connect\\obj\\Debug\\net9.0\\compressed\\ztmnvz42cg-qf1fljqgyq.gz",
       "SourceId": "Agri-Energy Connect",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Varsity College\\2025\\PROG7311\\Code\\Agri-Energy-Connect\\Agri-Energy Connect\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Agri-Energy Connect",
-      "RelativePath": "css/site#[.{fingerprint=kqxmc8c7rn}]?.css.gz",
+      "RelativePath": "css/site#[.{fingerprint=qf1fljqgyq}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -1354,8 +1354,8 @@
       "RelatedAsset": "C:\\Varsity College\\2025\\PROG7311\\Code\\Agri-Energy-Connect\\Agri-Energy Connect\\wwwroot\\css\\site.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "fivp3bkek7",
-      "Integrity": "OeXGBEHsmjXivhPZ5rN+EFNZf9PMxiEYH/LVu8ZKDkI=",
+      "Fingerprint": "ebft3gw6ds",
+      "Integrity": "Nmp/3Et2EDDz4mSp1frR4Fxp1dV91zHd2JuIWgy7qT8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Varsity College\\2025\\PROG7311\\Code\\Agri-Energy-Connect\\Agri-Energy Connect\\wwwroot\\css\\site.css"
@@ -1417,8 +1417,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "kqxmc8c7rn",
-      "Integrity": "TIBoC3Wyvn1g6g/pBtq1ks9tLgv7JLvU95Y4jroABsI=",
+      "Fingerprint": "qf1fljqgyq",
+      "Integrity": "+klLMavYD8TxFw2iFdxgaK64VWPvH9cI5YHyuyd5vNw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -2752,7 +2752,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 12 May 2025 13:52:14 GMT"
+          "Value": "Tue, 13 May 2025 14:06:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2805,7 +2805,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 12 May 2025 13:52:14 GMT"
+          "Value": "Tue, 13 May 2025 14:06:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2842,7 +2842,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 12 May 2025 13:52:14 GMT"
+          "Value": "Tue, 13 May 2025 14:06:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2889,7 +2889,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 12 May 2025 13:52:14 GMT"
+          "Value": "Tue, 13 May 2025 14:06:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2942,7 +2942,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 12 May 2025 13:52:14 GMT"
+          "Value": "Tue, 13 May 2025 14:06:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2979,7 +2979,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 12 May 2025 13:52:14 GMT"
+          "Value": "Tue, 13 May 2025 14:06:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3026,7 +3026,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 12 May 2025 13:52:14 GMT"
+          "Value": "Tue, 13 May 2025 14:06:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3087,7 +3087,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 12 May 2025 13:52:14 GMT"
+          "Value": "Tue, 13 May 2025 14:06:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3132,7 +3132,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 12 May 2025 13:52:14 GMT"
+          "Value": "Tue, 13 May 2025 14:06:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3187,7 +3187,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 12 May 2025 13:52:14 GMT"
+          "Value": "Tue, 13 May 2025 14:06:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3248,7 +3248,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 12 May 2025 13:52:14 GMT"
+          "Value": "Tue, 13 May 2025 14:06:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3293,7 +3293,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 12 May 2025 13:52:14 GMT"
+          "Value": "Tue, 13 May 2025 14:06:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3325,12 +3325,12 @@
     },
     {
       "Route": "css/site.css",
-      "AssetFile": "C:\\Varsity College\\2025\\PROG7311\\Code\\Agri-Energy-Connect\\Agri-Energy Connect\\obj\\Debug\\net9.0\\compressed\\ztmnvz42cg-kqxmc8c7rn.gz",
+      "AssetFile": "C:\\Varsity College\\2025\\PROG7311\\Code\\Agri-Energy-Connect\\Agri-Energy Connect\\obj\\Debug\\net9.0\\compressed\\ztmnvz42cg-qf1fljqgyq.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.002380952381"
+          "Quality": "0.001347708895"
         }
       ],
       "ResponseHeaders": [
@@ -3340,15 +3340,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "419"
+          "Value": "741"
         },
         {
           "Name": "ETag",
-          "Value": "\"OeXGBEHsmjXivhPZ5rN+EFNZf9PMxiEYH/LVu8ZKDkI=\""
+          "Value": "\"Nmp/3Et2EDDz4mSp1frR4Fxp1dV91zHd2JuIWgy7qT8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 13:15:41 GMT"
+          "Value": "Tue, 13 May 2025 07:42:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3368,13 +3368,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"TIBoC3Wyvn1g6g/pBtq1ks9tLgv7JLvU95Y4jroABsI=\""
+          "Value": "W/\"+klLMavYD8TxFw2iFdxgaK64VWPvH9cI5YHyuyd5vNw=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-TIBoC3Wyvn1g6g/pBtq1ks9tLgv7JLvU95Y4jroABsI="
+          "Value": "sha256-+klLMavYD8TxFw2iFdxgaK64VWPvH9cI5YHyuyd5vNw="
         }
       ]
     },
@@ -3389,7 +3389,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "868"
+          "Value": "1669"
         },
         {
           "Name": "Content-Type",
@@ -3397,11 +3397,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"TIBoC3Wyvn1g6g/pBtq1ks9tLgv7JLvU95Y4jroABsI=\""
+          "Value": "\"+klLMavYD8TxFw2iFdxgaK64VWPvH9cI5YHyuyd5vNw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 13:15:41 GMT"
+          "Value": "Tue, 13 May 2025 07:42:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3411,13 +3411,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-TIBoC3Wyvn1g6g/pBtq1ks9tLgv7JLvU95Y4jroABsI="
+          "Value": "sha256-+klLMavYD8TxFw2iFdxgaK64VWPvH9cI5YHyuyd5vNw="
         }
       ]
     },
     {
       "Route": "css/site.css.gz",
-      "AssetFile": "C:\\Varsity College\\2025\\PROG7311\\Code\\Agri-Energy-Connect\\Agri-Energy Connect\\obj\\Debug\\net9.0\\compressed\\ztmnvz42cg-kqxmc8c7rn.gz",
+      "AssetFile": "C:\\Varsity College\\2025\\PROG7311\\Code\\Agri-Energy-Connect\\Agri-Energy Connect\\obj\\Debug\\net9.0\\compressed\\ztmnvz42cg-qf1fljqgyq.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3426,7 +3426,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "419"
+          "Value": "741"
         },
         {
           "Name": "Content-Type",
@@ -3434,11 +3434,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"OeXGBEHsmjXivhPZ5rN+EFNZf9PMxiEYH/LVu8ZKDkI=\""
+          "Value": "\"Nmp/3Et2EDDz4mSp1frR4Fxp1dV91zHd2JuIWgy7qT8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 13:15:41 GMT"
+          "Value": "Tue, 13 May 2025 07:42:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3456,18 +3456,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-OeXGBEHsmjXivhPZ5rN+EFNZf9PMxiEYH/LVu8ZKDkI="
+          "Value": "sha256-Nmp/3Et2EDDz4mSp1frR4Fxp1dV91zHd2JuIWgy7qT8="
         }
       ]
     },
     {
-      "Route": "css/site.kqxmc8c7rn.css",
-      "AssetFile": "C:\\Varsity College\\2025\\PROG7311\\Code\\Agri-Energy-Connect\\Agri-Energy Connect\\obj\\Debug\\net9.0\\compressed\\ztmnvz42cg-kqxmc8c7rn.gz",
+      "Route": "css/site.qf1fljqgyq.css",
+      "AssetFile": "C:\\Varsity College\\2025\\PROG7311\\Code\\Agri-Energy-Connect\\Agri-Energy Connect\\obj\\Debug\\net9.0\\compressed\\ztmnvz42cg-qf1fljqgyq.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.002380952381"
+          "Quality": "0.001347708895"
         }
       ],
       "ResponseHeaders": [
@@ -3477,15 +3477,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "419"
+          "Value": "741"
         },
         {
           "Name": "ETag",
-          "Value": "\"OeXGBEHsmjXivhPZ5rN+EFNZf9PMxiEYH/LVu8ZKDkI=\""
+          "Value": "\"Nmp/3Et2EDDz4mSp1frR4Fxp1dV91zHd2JuIWgy7qT8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 13:15:41 GMT"
+          "Value": "Tue, 13 May 2025 07:42:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3505,13 +3505,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"TIBoC3Wyvn1g6g/pBtq1ks9tLgv7JLvU95Y4jroABsI=\""
+          "Value": "W/\"+klLMavYD8TxFw2iFdxgaK64VWPvH9cI5YHyuyd5vNw=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "kqxmc8c7rn"
+          "Value": "qf1fljqgyq"
         },
         {
           "Name": "label",
@@ -3519,12 +3519,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-TIBoC3Wyvn1g6g/pBtq1ks9tLgv7JLvU95Y4jroABsI="
+          "Value": "sha256-+klLMavYD8TxFw2iFdxgaK64VWPvH9cI5YHyuyd5vNw="
         }
       ]
     },
     {
-      "Route": "css/site.kqxmc8c7rn.css",
+      "Route": "css/site.qf1fljqgyq.css",
       "AssetFile": "C:\\Varsity College\\2025\\PROG7311\\Code\\Agri-Energy-Connect\\Agri-Energy Connect\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -3534,7 +3534,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "868"
+          "Value": "1669"
         },
         {
           "Name": "Content-Type",
@@ -3542,11 +3542,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"TIBoC3Wyvn1g6g/pBtq1ks9tLgv7JLvU95Y4jroABsI=\""
+          "Value": "\"+klLMavYD8TxFw2iFdxgaK64VWPvH9cI5YHyuyd5vNw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 13:15:41 GMT"
+          "Value": "Tue, 13 May 2025 07:42:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3556,7 +3556,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "kqxmc8c7rn"
+          "Value": "qf1fljqgyq"
         },
         {
           "Name": "label",
@@ -3564,13 +3564,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-TIBoC3Wyvn1g6g/pBtq1ks9tLgv7JLvU95Y4jroABsI="
+          "Value": "sha256-+klLMavYD8TxFw2iFdxgaK64VWPvH9cI5YHyuyd5vNw="
         }
       ]
     },
     {
-      "Route": "css/site.kqxmc8c7rn.css.gz",
-      "AssetFile": "C:\\Varsity College\\2025\\PROG7311\\Code\\Agri-Energy-Connect\\Agri-Energy Connect\\obj\\Debug\\net9.0\\compressed\\ztmnvz42cg-kqxmc8c7rn.gz",
+      "Route": "css/site.qf1fljqgyq.css.gz",
+      "AssetFile": "C:\\Varsity College\\2025\\PROG7311\\Code\\Agri-Energy-Connect\\Agri-Energy Connect\\obj\\Debug\\net9.0\\compressed\\ztmnvz42cg-qf1fljqgyq.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3579,7 +3579,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "419"
+          "Value": "741"
         },
         {
           "Name": "Content-Type",
@@ -3587,11 +3587,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"OeXGBEHsmjXivhPZ5rN+EFNZf9PMxiEYH/LVu8ZKDkI=\""
+          "Value": "\"Nmp/3Et2EDDz4mSp1frR4Fxp1dV91zHd2JuIWgy7qT8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 06 May 2025 13:15:41 GMT"
+          "Value": "Tue, 13 May 2025 07:42:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3609,7 +3609,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "kqxmc8c7rn"
+          "Value": "qf1fljqgyq"
         },
         {
           "Name": "label",
@@ -3617,7 +3617,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-OeXGBEHsmjXivhPZ5rN+EFNZf9PMxiEYH/LVu8ZKDkI="
+          "Value": "sha256-Nmp/3Et2EDDz4mSp1frR4Fxp1dV91zHd2JuIWgy7qT8="
         }
       ]
     },

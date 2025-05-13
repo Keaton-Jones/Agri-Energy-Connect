@@ -15,7 +15,6 @@
             <th>Product Description</th>
             <th>Production Date</th>
             <th>Product Type</th>
-            <th>Image</th>
         </tr>
     </thead>
     <tbody>
@@ -26,8 +25,8 @@
                 <td>@product.Description</td>
                 <td>@product.ProductionDate.ToString("yyyy-MM-dd")</td>
                 <td>@product.Type</td>
-                <td><img src="@Url.Content("~/images/" + product.ImageUrl)" alt="Product Image" style="width:100px;height:100px;" /></td>
-                <td><a asp-action="DeleteProduct" asp-route-id="@product.Id">Delete</a></td>
+                <td><a asp-action="Edit" asp-route-id="@product.Id">Edit</a></td>
+                <td><a asp-action="Delete" asp-route-id="@product.Id">Delete</a></td>
             </tr>
         }
     </tbody>

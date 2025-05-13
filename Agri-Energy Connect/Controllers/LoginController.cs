@@ -53,6 +53,7 @@ namespace Agri_Energy_Connect.Controllers
                     if (userExists != null)
                     {
                         HttpContext.Session.SetString("UserRole", userExists.role);
+                        HttpContext.Session.SetInt32("UserId", userExists.farmerId);
                         return RedirectToAction("Index", "Home");
                     }
                 }
@@ -60,6 +61,8 @@ namespace Agri_Energy_Connect.Controllers
             }
             return View(user);
         }
+
+        
 
     }
 }
