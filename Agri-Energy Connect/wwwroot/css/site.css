@@ -11,7 +11,7 @@ html {
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
-
+/*Stack Overflow : How do you get the footer to stay at the bottom of a Web page? , 23/09/2024 , https://stackoverflow.com/questions/42294/how-do-you-get-the-footer-to-stay-at-the-bottom-of-a-web-page */
 html, body {
   height: 100%;
 }
@@ -52,7 +52,7 @@ footer.footer {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
-/*Google, Gemini, 06/05/2025, */
+/*Google, Gemini, 06/05/2025, https://g.co/gemini/share/597f14a6ee9f */
 .navbar .container-fluid { /* Note the container-fluid here, as that's what you're using */
   display: flex;
   justify-content: space-between;
