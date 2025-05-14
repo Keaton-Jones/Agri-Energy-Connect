@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\Agri-Energy Connect.vau6oj6qkp.bundle.scp.css"
     },
     {
+      "Id": "C:\\Varsity College\\2025\\PROG7311\\Code\\Agri-Energy-Connect\\Agri-Energy Connect\\wwwroot\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Varsity College\\2025\\PROG7311\\Code\\Agri-Energy-Connect\\Agri-Energy Connect\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
       "Id": "C:\\Varsity College\\2025\\PROG7311\\Code\\Agri-Energy-Connect\\Agri-Energy Connect\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

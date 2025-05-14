@@ -14,7 +14,7 @@
             <th>Product Name</th>
             <th>Product Description</th>
             <th>Production Date</th>
-            <th>Product Type</th>
+            <th>Product Category</th>
         </tr>
     </thead>
     <tbody>
@@ -24,7 +24,7 @@
                 <td>@product.Name</td>
                 <td>@product.Description</td>
                 <td>@product.ProductionDate.ToString("yyyy-MM-dd")</td>
-                <td>@product.Type</td>
+                <td>@product.Category</td>
                 <td><a asp-action="Edit" asp-route-id="@product.Id">Edit</a></td>
                 <td><a asp-action="Delete" asp-route-id="@product.Id">Delete</a></td>
             </tr>

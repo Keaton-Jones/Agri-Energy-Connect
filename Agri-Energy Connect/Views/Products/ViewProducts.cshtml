@@ -1,18 +1,18 @@
 @model IEnumerable<Agri_Energy_Connect.Models.Product>
 @{
     ViewData["Title"] = "View Products";
+    DateTime? selectedDate = ViewData["FilterDate"] as DateTime?;
 }
 
-<h1>
-    Products Dashboard
-</h1>
+<h1>Products for @ViewData["FarmerName"]</h1>
+
 <div class="mb-4">
     <form asp-action="ViewAllProducts" method="get">
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="filterDate">Production Date</label>
-                    <input type="date" id="filterDate" name="filterDate" class="form-control" value="@(Context.Request.Query["filterDate"])" />
+                    <input type="date" id="filterDate" name="filterDate" class="form-control" value="@(selectedDate.HasValue ? selectedDate.Value.ToString("yyyy-MM-dd") : "")" />
                 </div>
             </div>
             <div class="col-md-4">
@@ -28,32 +28,39 @@
             </div>
             <div class="col-md-4">
                 <button type="submit" class="btn btn-primary mt-4">Filter</button>
-                <a asp-action="Index" class="btn btn-secondary mt-4">Reset</a>
+                <a asp-action="ViewProducts" asp-route-farmerId="@ViewData["FarmerId"]" class="btn btn-secondary mt-4">Reset</a>
             </div>
         </div>
+        <input type="hidden" name="farmerId" value="@ViewData["FarmerId"]" />
     </form>
 </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Product Name</th>
-            <th>Description</th>
-            <th>Type</th>
-            <th>Date Added</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+
+@if (Model != null)
+{
+    <table class="table">
+        <thead>
             <tr>
-                <td>@Html.DisplayFor(modelItem => item.Name)</td>
-                <td>@Html.DisplayFor(modelItem => item.Description)</td>
-                <td>@Html.DisplayFor(modelItem => item.Type)</td>
-                <td>@Html.DisplayFor(modelItem => item.ProductionDate)</td>
-                <td></td>
+                <th>Product Name</th>
+                <th>Description</th>
+                <th>Production Date</th>
+                <th>Category</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.Name</td>
+                    <td>@product.Description</td>
+                    <td>@product.ProductionDate.ToString("yyyy-MM-dd")</td>
+                    <td>@product.Category</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No products found for this farmer.</p>
+}

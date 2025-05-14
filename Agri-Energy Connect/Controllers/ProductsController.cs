@@ -5,10 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Agri_Energy_Connect.Data;
+using System;
 
 namespace Agri_Energy_Connect.Controllers
 {
-
     using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
     public class ProductsController : Controller
@@ -25,8 +25,22 @@ namespace Agri_Energy_Connect.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var products = await _context.Products.ToListAsync();
+            int farmerId = HttpContext.Session.GetInt32("UserId").Value;
+            var products = await _context.Products.Where(p => p.UserId == farmerId).ToListAsync();
             return View(products);
+        }
+
+        public async Task<IActionResult> ViewFarmers()
+        {
+            var farmers = await _context.Users
+                .Where(u => u.role == "User")
+                .ToListAsync();
+
+            if (farmers == null || farmers.Count == 0)
+            {
+                return NotFound("No farmers found.");
+            }
+            return View(farmers);
         }
 
         [HttpGet]
@@ -43,11 +57,11 @@ namespace Agri_Energy_Connect.Controllers
             {
                 var products = new Product
                 {
-                    farmerId = farmerId,
+                    UserId = farmerId,
                     Name = product.Name,
                     Description = product.Description,
                     ProductionDate = product.ProductionDate,
-                    Type = product.Type,
+                    Category = product.Category,
                 };
                 _context.Products.Add(products);
             }
@@ -73,7 +87,7 @@ namespace Agri_Energy_Connect.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,ProductionDate,Type")] Product product)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,ProductionDate,Category")] Product product)
         {
             if (id != product.Id)
             {
@@ -83,7 +97,7 @@ namespace Agri_Energy_Connect.Controllers
             if (ModelState.IsValid)
             {
                 var farmerId = HttpContext.Session.GetInt32("UserId").Value;
-                product.farmerId = farmerId;
+                product.UserId = farmerId;
                 try
                 {
                     _context.Update(product);
@@ -143,27 +157,45 @@ namespace Agri_Energy_Connect.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> ViewAllProducts(DateOnly? filterDate, string filterType)
+        public async Task<IActionResult> ViewProducts(int farmerId, DateTime? filterDate, string filterType)
         {
+            // 1. Get the farmer's products from the database.
+            var farmerProducts = await _context.Products
+                .Where(p => p.UserId == farmerId)
+                .ToListAsync();
 
-            var products = _context.Products.AsQueryable();
+            // 2. Check if farmer exists
+            var farmer = await _context.Users.FirstOrDefaultAsync(u => u.UserId == farmerId);
+            if (farmer == null)
+            {
+                return NotFound($"Farmer with ID {farmerId} not found.");
+            }
+
+            // 3. Apply filters
+            if (!string.IsNullOrEmpty(filterType))
+            {
+                farmerProducts = farmerProducts.Where(p => p.Category == filterType).ToList();
+            }
 
             if (filterDate.HasValue)
             {
-                products = products.Where(p => p.ProductionDate == filterDate.Value);
+                farmerProducts = farmerProducts.Where(p => p.ProductionDate == DateOnly.FromDateTime(filterDate.Value)).ToList();
             }
 
-            if (!string.IsNullOrEmpty(filterType))
+            if (farmerProducts == null || farmerProducts.Count == 0)
             {
-                products = products.Where(p => p.Type == filterType);
+                if (string.IsNullOrEmpty(filterType) && !filterDate.HasValue)
+                    return NotFound($"No products found for farmer with ID {farmerId}.");
+                else
+                    return NotFound($"No products found for farmer with ID {farmerId} matching the criteria.");
             }
 
-            products = products.OrderByDescending(p => p.ProductionDate);
-
-            var filteredProducts = await products.ToListAsync();
-            return View(filteredProducts);
+            // 4. Pass the data to the view.
+            ViewData["FarmerName"] = farmer.Name;
+            ViewData["FarmerId"] = farmerId;
+            ViewData["FilterType"] = filterType; 
+            ViewData["FilterDate"] = filterDate;
+            return View(farmerProducts);
         }
-
-
     }
 }

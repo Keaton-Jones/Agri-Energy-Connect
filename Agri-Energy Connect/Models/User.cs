@@ -6,8 +6,7 @@ namespace Agri_Energy_Connect.Models
     public class User
     {
         [Key]
-        public int farmerId { get; set; }
-
+        public int UserId { get; set; }
         [Required]
         [DisplayName("Name")]
         public string Name { get; set; }
@@ -25,7 +24,6 @@ namespace Agri_Energy_Connect.Models
         [DisplayName("Email Address")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
-
         [Required]
         [DisplayName("Password")]
         [DataType(DataType.Password)]

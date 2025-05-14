@@ -1,0 +1,24 @@
+@model List<Agri_Energy_Connect.Models.User>
+@{
+    ViewData["Title"] = "Farmers";
+}
+
+<h1>Farmers</h1>
+
+@if (Model != null)
+{
+    <ul>
+        @foreach (var farmer in Model)
+        {
+            <li>
+                <a asp-action="ViewProducts" asp-controller="Products" asp-route-farmerId="@farmer.UserId">
+                    @farmer.Name @farmer.Surname
+                </a>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>No farmers found.</p>
+}

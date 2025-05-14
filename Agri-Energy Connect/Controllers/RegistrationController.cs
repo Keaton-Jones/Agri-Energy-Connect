@@ -18,7 +18,7 @@ namespace Agri_Energy_Connect.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
+        [HttpGet]   
         public IActionResult Index()
         {
             return View();
